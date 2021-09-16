@@ -16,10 +16,11 @@ public class ShuffleAnArray {
    */
 
   public static void main(String[] args) {
-    var solution = new Solution(new int[]{1, 2, 3, 4, 5});
+    int[] ints = {1, 2, 3, 4, 5};
+    var solution = new Solution(ints);
 
     int[] shuffle = solution.shuffle();
-    for (int i = 0; i < shuffle.length - 1; i++) {
+    for (int i = 0; i < shuffle.length; i++) {
       System.out.print(shuffle[i] + " ");
     }
   }
