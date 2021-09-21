@@ -9,8 +9,7 @@ import java.util.List;
 public class MinStack<T extends Comparable> {
 
   /**
-   * Internally implement the stack as a min heap. For each node associate a value and a key that
-   * represents the node's place within the virtual stack.
+   * Keep track of min stack as you add elements.
    */
   private List<T> stack;
   private T currentMinElement;
