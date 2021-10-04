@@ -21,10 +21,12 @@ public class ClimbingStairs {
       System.out.println(waysToClimbNStairs(2));
       System.out.println(waysToClimbNStairs(3));
       System.out.println(waysToClimbNStairs(4));
+      System.out.println(waysToClimbNStairs(5));
   }
 
   public static int waysToClimbNStairs(int numberOfStairs) {
-      return waysToClimbNStairs(numberOfStairs, new Integer[]{});
+
+      return waysToClimbNStairs(numberOfStairs, new Integer[100]);
   }
 
   private static Integer waysToClimbNStairs( int index, Integer[] memo) {
@@ -35,7 +37,7 @@ public class ClimbingStairs {
       if(isValueMemoized(memo, index)) {
           return memo[index];
       } else {
-          memo[index] = memo[index - 1] + memo[index - 2];
+          memo[index] = waysToClimbNStairs(index -1, memo) +  waysToClimbNStairs(index - 2, memo);
       }
       return memo[index];
   }
