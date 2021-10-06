@@ -1,17 +1,15 @@
 package com.pascoe.leetcodeproblems.solutions.design.min_stack;
 
-import lombok.AllArgsConstructor;
-
 import java.util.ArrayList;
 import java.util.List;
+import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
 public class MinStack<T extends Comparable> {
 
-  /**
-   * Keep track of min stack as you add elements.
-   */
+  /** Keep track of min stack as you add elements. */
   private List<T> stack;
+
   private T currentMinElement;
 
   public MinStack() {
@@ -19,9 +17,9 @@ public class MinStack<T extends Comparable> {
   }
 
   public void push(T value) {
-    if(currentMinElement == null) {
+    if (currentMinElement == null) {
       currentMinElement = value;
-    } else if(value.compareTo(currentMinElement) < 0) {
+    } else if (value.compareTo(currentMinElement) < 0) {
       currentMinElement = value;
     }
     stack.add(value);
@@ -40,5 +38,4 @@ public class MinStack<T extends Comparable> {
   public T getMin() {
     return currentMinElement;
   }
-
 }
